@@ -1,0 +1,118 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.App{
+    display: flex;
+    min-height: 100vh;
+}
+.toolbar{
+    padding: 21px;
+    background: #BDBDBD;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .toolbar-text{
+        margin-bottom: 10px;
+        margin-top: 35px;
+    }
+    .toolbar-btn{
+        background: #4B51EF;
+        padding: 5px 15px;
+        margin-bottom: 15px;
+    }
+}
+.btn{
+    border-radius: 5px;
+    color: white;
+    border:none;
+}
+.user-list{
+    display: flex;
+    flex-direction: column;
+
+    .user-item{
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        background-color: #F3F3F3;
+        width: 500px;
+        margin-bottom: 12px;
+        padding: 5px 10px;
+        border-radius: 8px;
+        
+        .user-item__category{
+            color: #A3A3A3;
+        }
+    }
+}
+.link{
+    text-decoration: none;
+}
+.back-link{
+    background-color: #4B51EF;
+    color:white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 13px;
+}
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+.content{
+    margin-left: 35px;
+    margin-top: 20px;
+
+    .content-length{
+        text-align:end;
+    }
+}
+.edit-btn{
+    background: #4B51EF;
+    padding: 5px 10px;
+}
+
+.profile-form{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #F3F3F3;
+    border-radius: 8px;
+    width: 520px;
+    padding: 20px 12px;
+
+    input{
+        width: 300px;
+        padding:5px 10px;
+        border-radius: 5px;
+        border: 1px solid #D8D8D8;
+    }
+    .error-input{
+        border: 1px solid #D91313;
+    }
+    textarea{
+        width: 500px;
+        padding:5px 10px;
+        border-radius: 5px;
+        border: 1px solid #D8D8D8;
+    }
+    p{
+        color:#D91313;
+        font-size: 13px;
+    }
+    
+    .submit-btn{
+        padding: 5px 15px;
+        background: #52CF4F;
+        margin-top: 30px;
+        align-self:end;
+
+        &:disabled{
+            
+            background: #AFAFAF;
+        }
+    }
+}
