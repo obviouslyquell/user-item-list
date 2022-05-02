@@ -2,17 +2,15 @@ import React from 'react'
 import { useLocation, Link } from 'react-router-dom'
 import { Field, Formik, Form } from 'formik';
 import * as Yup from 'yup'
-import ContentLoader from "react-content-loader"
 
 function Profile() {
     const [readOnly, setReadOnly] = React.useState(true)
     const location = useLocation();
     const [obj, setObj] = React.useState(location.state);
     const onEditClick = () =>{
-        setReadOnly(!readOnly)
-
+        setReadOnly(!readOnly);
     }
-    const phoneRegExp = /^((\+[1-9]{1,4}[ -]?)|(\([0-9]{2,3}\)[ -]?)|([0-9]{2,4})[ -]?)*?[0-9]{3,4}[ -]?[0-9]{3,4}$/
+    const phoneRegExp = /^((\+[1-9]{1,4}[ -]?)|(\([0-9]{2,3}\)[ -]?)|([0-9]{2,4})[ -]?)*?[0-9]{3,4}[ -]?[0-9]{3,4}$/;
     const websiteRegExp = /^((http|https):\/\/)?(www.)?(?!.*(http|https|www.))[a-zA-Z0-9_-]+(\.[a-zA-Z]+)+(\/)?.([\w\?[a-zA-Z-_%\/@?]+)*([^\/\w\?[a-zA-Z0-9_-]+=\w+(&[a-zA-Z0-9_]+=\w+)*)?$/;
     const signUpSchema = Yup.object().shape({
         name:Yup.string().min(2, 'Too short!').max(50, 'Too long!').required('Required'),
@@ -26,7 +24,7 @@ function Profile() {
     })
   return (
     <div className='content'> 
-    <Link to='/' className='link back-link'>Назад</Link>
+    <Link to='/' className='link back-link btn'>Назад</Link>
     <div className='header'>
         <h3>Профиль пользователя</h3>
         <button className='edit-btn btn' onClick={()=>onEditClick()}>Редактировать</button>
@@ -71,10 +69,10 @@ function Profile() {
                     <Field name='zipCode' disabled={readOnly} className={touched.zipCode && errors.zipCode && 'error-input'}/>
                     {touched.zipCode && errors.zipCode && <p>{errors.zipCode}</p>}
                     <label htmlFor='phone'>Phone: </label>
-                    <Field name='phone' disabled={readOnly}/>
+                    <Field name='phone' disabled={readOnly} className={touched.phone && errors.phone && 'error-input'}/>
                     {touched.phone && errors.phone && <p>{errors.phone}</p>}
                     <label htmlFor='website' >Website: </label>
-                    <Field name='website' disabled={readOnly}/>
+                    <Field name='website' disabled={readOnly} className={touched.website && errors.website && 'error-input'}/>
                     {touched.website && errors.website && <p>{errors.website}</p>}
                     <label htmlFor='comment'>Comment: </label>
                     <Field as="textarea" name="comment" disabled={readOnly}/>
@@ -82,8 +80,6 @@ function Profile() {
                 </Form>
                 )
              }}
-            
-
         </Formik>
     </div>
   )

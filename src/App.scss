@@ -27,7 +27,19 @@
     border-radius: 5px;
     color: white;
     border:none;
+    box-shadow: 0px 3px 4px 0px rgba(0,0,0,0.3);
+    outline: 0;
+    transition: all 0.3s;
+    cursor: pointer;
 }
+.btn:hover {
+    box-shadow: 0px 15px 20px -5px rgba(0,0,0,0.3);
+    transform: scale(1.03);
+}
+.btn:active {
+    box-shadow: 0px 4px 8px rgba(0,0,0,0.3);
+    transform: scale(0.98);
+  }
 .user-list{
     display: flex;
     flex-direction: column;
@@ -62,6 +74,7 @@
     justify-content: space-between;
     align-items: center;
     margin-bottom: 16px;
+    margin-top: 5px;
 }
 .content{
     margin-left: 35px;
