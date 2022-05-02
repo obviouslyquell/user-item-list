@@ -27,17 +27,6 @@ function Profile() {
   return (
     <div className='content'> 
     <Link to='/' className='link back-link'>Назад</Link>
-    <ContentLoader 
-    speed={2}
-    width={400}
-    height={150}
-    viewBox="0 0 400 150"
-    backgroundColor="#f3f3f3"
-    foregroundColor="#ecebeb"
-  >
-    <rect x="0" y="0" rx="5" ry="5" width="500" height="73" /> 
-    <rect x="0" y="85" rx="0" ry="0" width="500" height="73" />
-  </ContentLoader>
     <div className='header'>
         <h3>Профиль пользователя</h3>
         <button className='edit-btn btn' onClick={()=>onEditClick()}>Редактировать</button>
